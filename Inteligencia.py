@@ -3,6 +3,7 @@ from groq import Groq
 
 # Modelos y configuraciones iniciales
 modelos = ["llama3-8b-8192", "llama3-70b-8192", "mixtral-8x7b-32768"]
+fumos = ["Cirno", "Yuyuko", "Reimu"]
 modelo_en_uso = ""
 cliente_usuario = ""
 clave_secreta = ""
@@ -34,6 +35,7 @@ def configurar_pagina():
     # SIDEBAR CON OPCIONES
     st.sidebar.title("⚙️ CONFIGURACIÓN")
     m = st.sidebar.selectbox("Modelo", modelos, 0)
+    st.sidebar.selectbox("Fumos", fumos, 0)
 
     # BOTÓN PARA REINICIAR LA PÁGINA
     if st.sidebar.button("Borrar Chat"):
